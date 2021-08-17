@@ -1,0 +1,28 @@
+.sidebar {
+    position: relative;
+    min-width: 250px;
+    height: calc(100vh - 50px);
+    &-fixed {
+        padding-top: 30px;
+        height: calc(100vh - 50px);
+        background-color: $color1;
+        position: fixed;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        border-right: 1px solid $color4;
+    }
+    &-item {
+        justify-content: flex-start;
+        padding-left: 30px;
+        i {
+            font-size: 22px;
+        }
+        &.selected {
+            span, i {
+                color: $color3;
+            }
+        }
+    }
+}
