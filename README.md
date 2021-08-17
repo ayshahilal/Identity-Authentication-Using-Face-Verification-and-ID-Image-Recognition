@@ -15,6 +15,16 @@ Example of match:
 
 <img width="402" alt="Ekran Resmi 2021-08-17 19 12 38" src="https://user-images.githubusercontent.com/44849765/129762481-4f9b2c74-612c-4de3-8731-3888bd3cfd97.png">
 
-Results of transfer learning:
+
+In this project, during the development of the face verification system, training was conducted on pre-trained models using the CASIA-WebFace dataset.
+In this study, different experiments were carried out in order to compare the performance of the models.
+In the first model a; flatten and dense layers were added on the pre-trained vgg16 (with resnet-50 architecture) model. We did the last layer trainable and there were 5,346,841 trainable values in the model after adding the layers. For this model, we split the CASIA-WebFace dataset and took 25 classes of it to train and test the model. We split it like 80 train, 10 validation, 10 test data. The accuracy was 0.70 after training 10 epoch.
+In the second model b; flatten and dense layers were added on the pre-trained vgg16 (with resnet-50 architecture) model just like the a model. We did the last four layers trainable and there were 7,288,516 trainable values in the model. We use the 25 classes of the dataset like first model to train and test. We split it like 80 train, 10 validation, 10 test data. The accuracy was 0.73 after training 10 epoch.
+In the third model c; flatten layer, 2 dense(512) layer, 1 dense(256) layer were added on the pre-trained VGGFace model. There were 13,239,552 trainable values in the model after adding the layers. For this model, we split the CASIA-WebFace dataset and took 100 classes of it to train and test the model. We split it like 80 train, 10 validation, 10 test data. The accuracy was 0.82 after training 20 epochs.
+In the last model d; flatten layer, 2 dense(512) layer, 1 dense(256) layer were added on the pre-trained VGGFace model just like the c model.But this time we trained the model on 256 classes taken from CASIA-WebFace. We split it like 80 train, 10 validation, 10 test data. The accuracy was 0.83 after training 20 epochs.
+
+If we look at the models that we have trained, we can say that the most successful model is the last one (d model). When we compare the first two models, we can say that if there is more trainable values, the accuracy increase because the other conditions are the same for the model a and b. When we look at the c and d models, d model gives slightly better results because that the class number is more than the c model.
+
+The comparisons of the models is below.
 
 <img width="515" alt="Ekran Resmi 2021-08-17 19 20 34" src="https://user-images.githubusercontent.com/44849765/129763395-b5c87bc5-6d16-4605-a755-47498675700a.png">
