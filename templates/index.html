@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<div class="centered-form">
+    <h4 class="centered-form-header">You dont verify your account. Please verify your account</h4>
+
+    <form action="/verify" method="POST" enctype="multipart/form-data">
+        {% if error %}
+        <p class="error">{{error}}</p>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" placeholder="firstname" required />
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" placeholder="lastname" required />
+        </div>
+
+        <div class="form-group">
+            <label for="tc">TC</label>
+            <input type="text" name="tc" placeholder="tc" required />
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Birth Date</label>
+            <input type="date" name="birthdate" placeholder="birth date" required />
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="select-wrapper">
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <i class='bx bx-down-arrow'></i>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="id_card">ID Card Photo</label>
+            <input type="file" name="id_card" id="id_card" required />
+        </div>
+
+        <div class="contentarea" style="margin-top: 3rem">
+            <div class="camera d-none">
+                <video id="video" width="300px">Video stream not available.</video>
+            </div>
+            <div id="start-camera-container"><button class="btn btn-blue" id="start-camera">Start Camera</button></div>
+            <div id="take-photo-container" class="d-none"><button class="btn btn-blue" id="take-photo">Take photo</button> <span class="timer"></span></div>
+
+        </div>
+
+        <input type="submit" class="btn btn-pink" value="Submit" />
+
+    </form>
+</div>
+{% endblock %}

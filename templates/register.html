@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<div class="centered-form">
+    <h4 class="centered-form-header">Register</h4>
+
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="email" />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password" />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password Confirmation</label>
+            <input type="password" name="password_confirmation" placeholder="password confirmation" />
+        </div>
+        {% if error %}
+        <p class="error">{{error}}</p>
+        {% endif %}
+        <input type="submit" class="btn btn-pink" value="Register" />
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<h1>success</h1>
+{% if is_verified %}
+<h1 style="color: green;">Your account already verified</h1>
+{% else %}
+<pre id="json">
+    surname:{{informations.surname}}
+    firstname:{{informations.name}}
+    tc_no:{{informations.tc_no}}
+    birth_date:{{informations.birth_date}}
+    valid_until:{{informations.valid_until}}
+    document_no:{{informations.document_no}}
+</pre>
+{% endif %}
+{% endblock %}

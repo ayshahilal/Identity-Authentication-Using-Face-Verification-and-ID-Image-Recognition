@@ -1,0 +1,15 @@
+<header class="header">
+    <div class="header-fixed">
+        <div class="header-left">
+            <a href="/" class="header-logo btn">Face detect</a>
+        </div>
+        <div class="header-right">
+            {% if is_login %}
+            <a href="/logout" class="header-right-item btn">Logout</a>
+            {% else %}
+            <a href="/login" class="header-right-item btn">Login</a>
+            <a href="/register" class="header-right-item btn">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
